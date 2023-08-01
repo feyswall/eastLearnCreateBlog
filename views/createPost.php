@@ -41,7 +41,7 @@
         ?>
 
 
-       <div class="card shadow-sm">
+       <div class="card">
            <div class="card-body">
               <div class="form-group">
                   <form action="/EastCoders/blog/backEnd/createPost.php" method="POST" enctype="multipart/form-data">
