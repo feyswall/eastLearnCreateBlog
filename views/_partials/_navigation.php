@@ -9,5 +9,6 @@
                 <a class="nav-link active" aria-current="page" href="/EastCoders/blog/index.php">Home</a>
             </li>
         </ul>
+        <button class="btn btn-outline-success">user</button>
     </div>
 </div>
