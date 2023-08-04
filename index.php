@@ -17,7 +17,7 @@
 
 <div class="container">
 
-    <a href="views/admin/createPost.php" class="btn btn-primary w-25 mb-5">create post</a>
+    <a href="views/createPost.php" class="btn btn-primary w-25 mb-5">create post</a>
 
     <div class="row">
         <?php

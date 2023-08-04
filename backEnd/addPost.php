@@ -4,7 +4,7 @@ include_once __DIR__."/../controller/config.php";
 
 $conn = db_connection();
 
-if ( $conn ){
+if ( !$conn ){
     header("location: createPost.php");
     exit();
 }
@@ -18,16 +18,11 @@ if( isset($_POST['send'])){
     $newContent = mysqli_real_escape_string($conn, $content);
     
     if( is_array($photo) ){
-        if( count($photo) ){
+        if( count($photo) < 1){
             header("location: createPost.php");
             exit();
         }else{
-            //  Inter data into our database
-            $sql = "INSERT
-                         INTO posts 
-                            (title, content, photo)
-                                 VALUES ('".$title."', '".$content."', 'photo.png')";
-            mysqli_query($conn, $sql);
+            echo "endelea";
         }
     }
 

@@ -35,10 +35,10 @@
 
                       <div class="mt-2">
                           <label for="image"></label>
-                          <input type="file" name="image" id="image">
+                          <input type="file" name="photo" id="image">
                       </div>
                       <div class="mt-2">
-                          <button class="btn btn-primary btn-sm" type="submit">submit</button>
+                          <button class="btn btn-primary btn-sm" name="send" type="submit">submit</button>
                       </div>
                   </form>
               </div>
