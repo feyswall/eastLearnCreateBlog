@@ -5,7 +5,7 @@ function db_connection() {
         $dbserver = 'localhost';
         $dbuser = 'root';
         $dbpass = '';
-        $dbname = 'east_blog';
+        $dbname = 'test_blog';
 
         $conn = mysqli_connect( $dbserver, $dbuser, $dbpass, $dbname );
 

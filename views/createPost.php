@@ -21,7 +21,7 @@
             <div class="card">
            <div class="card-body">
               <div class="form-group">
-                  <form action="/EastCoders/blog/backEnd/createPost.php" method="POST" enctype="multipart/form-data">
+                  <form action="../backEnd/addPost.php" method="POST" enctype="multipart/form-data">
                       <div>
                           <label for="title">Title</label>
                           <input type="text" name="title" class="form-group form-control" id="title" />
@@ -38,7 +38,7 @@
                           <input type="file" name="image" id="image">
                       </div>
                       <div class="mt-2">
-                          <button class="btn btn-primary btn-sm" type="send">submit</button>
+                          <button class="btn btn-primary btn-sm" type="submit">submit</button>
                       </div>
                   </form>
               </div>

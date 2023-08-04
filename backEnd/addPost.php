@@ -22,7 +22,12 @@ if( isset($_POST['send'])){
             header("location: createPost.php");
             exit();
         }else{
-            echo "endelea";
+            //  Inter data into our database
+            $sql = "INSERT
+                         INTO posts 
+                            (title, content, photo)
+                                 VALUES ('".$title."', '".$content."', 'photo.png')";
+            mysqli_query($conn, $sql);
         }
     }
 
