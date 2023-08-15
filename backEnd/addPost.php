@@ -10,6 +10,10 @@ if ( !$conn ){
 }
 
 if( isset($_POST['send'])){
+    date_default_timezone_set("Africa/Dar_es_salaam");
+     // tarehe ya leo
+    $today = date("Y-m-d h:i:s");
+
     $title = $_POST['title'];
     $content = $_POST['content'];
     $photo = $_FILES['photo'];
@@ -44,7 +48,20 @@ if( isset($_POST['send'])){
                         $destination =  __DIR__."/../public/posts/". $fileNewName;
                         $move_file = move_uploaded_file($fileTmpName, $destination);
                         if ( $move_file ) {
-                            echo $fileNewName;
+                            // save data katika database
+                            $sql = "INSERT INTO posts 
+                                (title,content,photo,created_at)
+                                    VALUES (
+                                        '".$newTitle."',
+                                        '".$newContent."', 
+                                        '".$fileNewName."',
+                                        '".$today."');";
+                            if (mysqli_query($conn, $sql)){
+                                header("location: ../views/createPost.php?status=success&message=post created successfully");
+                                exit();
+                            }else{
+                                echo "hazijaingia";
+                            }
                         } else {
                             echo "Fail to move the Uploaded File";
                         }
@@ -55,7 +72,6 @@ if( isset($_POST['send'])){
             } else {
                 echo "File Uploaded is not an image";
             }
-            // save data katika database
         }
     }
 

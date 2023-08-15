@@ -1,3 +1,7 @@
+<?php
+    include_once __DIR__."/controller/config.php";
+    $conn = db_connection();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,15 +25,19 @@
 
     <div class="row">
         <?php
-        for ( $g=0; $g<5; $g++){
+        $sql = "SELECT * FROM posts";
+        $query = mysqli_query($conn, $sql);
+        while ( $row = mysqli_fetch_assoc($query) ){
                 ?>
                 <div class="col-md-3 col-sm-12 mb-3">
                     <a href="views/singlePost.php">
                         <div class="card w-100">
-                            <img src="public/assets/images/posts/kilimanjaro.jpg" class="card-img-top" alt="...">
+                            <img src="public/posts/<?php echo $row['photo']; ?>" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">some quick example text to build on the card title and make up the bulk of the card's content</p>
+                                <h5 class="card-title"><?php echo $row['title']; ?></h5>
+                                <p class="card-text">
+                                    <?php echo $row['content']; ?>
+                                </p>
                             </div>
                         </div>
                     </a>
