@@ -37,7 +37,7 @@ if( isset($_POST['send'])){
             $resultArray = explode('.', $fileName);
             $fileExtension = strtolower(end($resultArray));
 
-            $imageExtension = array('png', 'jpg', 'jpeg', 'webp');
+            $imageExtension = array('png', 'jpg', 'jpeg', 'webp', 'jfif');
 
             if (in_array($fileExtension, $imageExtension)) {
                 if ($fileSize <= 2000000) {
