@@ -23,7 +23,7 @@ if( isset($_POST['send'])){
     
     if( is_array($photo) ){
         if( count($photo) < 1){
-            header("location: ../views/createPost.php");
+            header("location: ../views/createPost.php?status=fail&message=you must upload image");
             exit();
         }else{
             // Upload image file
@@ -70,7 +70,7 @@ if( isset($_POST['send'])){
                     echo "File Size Too Large...";
                 }
             } else {
-                echo "File Uploaded is not an image";
+                header("location: ../views/createPost.php?status=fail&message=you must upload image");
             }
         }
     }

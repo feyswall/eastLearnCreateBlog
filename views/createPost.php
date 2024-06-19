@@ -17,6 +17,11 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
+            <div class="col-md-8 my-3">
+                <?php
+                    include_once "_partials/_prompt.php";
+                ?>
+            </div>
             <div class="col-md-8 col-sm-10">
             <div class="card">
            <div class="card-body">
