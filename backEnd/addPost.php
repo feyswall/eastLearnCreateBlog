@@ -70,7 +70,7 @@ if( isset($_POST['send'])){
                     echo "File Size Too Large...";
                 }
             } else {
-                header("location: ../views/createPost.php?status=fail&message=you must upload image");
+                header("location: ../views/createPost.php?status=fail&message=File Uploaded is not an image");
             }
         }
     }

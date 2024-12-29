@@ -17,7 +17,8 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8 my-3">
+
+            <div class="col-sm-10 col-md-8">
                 <?php
                     include_once "_partials/_prompt.php";
                 ?>
