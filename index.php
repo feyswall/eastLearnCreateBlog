@@ -52,7 +52,7 @@ $query2 = mysqli_query($conn, $sql2);
             while ($row = mysqli_fetch_assoc($query2)) {
             ?>
                 <div class="col-md-3 col-sm-12 mb-3">
-                    <a href="views/singlePost.php">
+                    <a href="views/singlePost.php?id=<?php echo $row['id']; ?>">
                         <div class="card w-100">
                             <img src="public/posts/<?php echo $row['photo']; ?>" class="card-img-top" alt="...">
                             <div class="card-body">

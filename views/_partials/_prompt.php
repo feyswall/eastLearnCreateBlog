@@ -9,6 +9,6 @@ if (isset($_GET['status'])) {
     ?>
         <div class="alert alert-success"><?php echo $_GET['message']; ?></div>
 <?php
-    }
+}
 }
 ?>

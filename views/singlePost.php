@@ -1,3 +1,16 @@
+<?php
+    include_once __DIR__ . "/../controller/config.php";
+    $conn = db_connection();
+
+    if(!isset($_GET['id'])) {
+        header('location: ../index.php');
+    }
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM posts WHERE id='".$id."' LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+    $post = mysqli_fetch_assoc($result);
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +19,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>index | page</title>
     <link rel="stylesheet" href="../public/assets/css/bootstrap.min.css">
-
 </head>
 <body>
 
@@ -20,11 +32,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12">
             <div class="card w-100 border-0">
-                <h1 class="text-center  mb-3 text-uppercase">Lorem ipsum dolor sit.</h1>
-                <img src="../public/assets/images/posts/kilimanjaro.jpg" class="card-img-top" alt="...">
+                <h1 class="text-center  mb-3 text-uppercase">
+                    <?php 
+                        echo $post['title'];
+                    ?>
+                </h1>
+                <img src="../public/posts/<?php echo $post['photo']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, vel?</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">
+                        <?php
+                            echo $post['content'];
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
